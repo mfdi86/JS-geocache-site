@@ -14,7 +14,7 @@ const appRoutes: Routes = [
     component: CacheListComponent
   },
   {
-    path: 'cache-detail',
+    path: 'caches/:id',
     component: CacheDetailComponent
   }
  ];
