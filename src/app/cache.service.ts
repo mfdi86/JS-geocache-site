@@ -10,4 +10,11 @@ export class CacheService {
   getCaches() {
     return CACHES;
   }
+  getCacheById (cacheId: number){
+    for (var i = 0; i <= CACHES.length - 1; i++) {
+      if (CACHES[i].id === cacheId) {
+        return CACHES[i];
+      }
+    }
+  }
 }
