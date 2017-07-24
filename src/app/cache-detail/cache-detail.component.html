@@ -1,6 +1,6 @@
 <div>
-  <h3>{{cacheToDisplay.creator}}</h3>
-  <h4>{{cacheToDisplay.address}}</h4>
-  <p>{{cacheToDisplay.lat}}</p>
-  <p>{{cacheToDisplay.lon}}</p>
+  <h3>{{(cacheToDisplay | async)?.creator}}</h3>
+  <h4>{{(cacheToDisplay | async)?.address}}</h4>
+  <p>{{(cacheToDisplay | async)?.lat}}</p>
+  <p>{{(cacheToDisplay | async)?.lon}}</p>
 </div>
