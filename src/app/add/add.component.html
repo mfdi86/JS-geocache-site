@@ -19,9 +19,13 @@
       <div>
         <label>GPS Coordinates:</label>
         <br>
-        <input #newCoord>
+        <label>Latitude:</label>
+        <input #newLat>
+        <br>
+        <label>Longitude:</label>
+        <input #newLon>
       </div>
-      <button (click)="submitForm(newCreator.value, newAddress.value, newCoord.value); newCreator.value=''; newAddress.value=''; newCoord.value=''">Add</button>
+      <button (click)="submitForm(newCreator.value, newAddress.value, newLat.value, newLon.value); newCreator.value=''; newAddress.value=''; newLat.value=''; newLon.value='';">Add</button>
     </div>
   </div>
 </div>
