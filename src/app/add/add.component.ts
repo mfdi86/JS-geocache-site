@@ -12,18 +12,28 @@ import { FirebaseListObservable } from 'angularfire2/database';
   styleUrls: ['./add.component.css'],
   providers: [CacheService, GeolocateService]
 })
-export class AddComponent implements OnInit {
+export class AddComponent {
   geocaches: any[];
   address: any [] = null;
 
   constructor(private geolocateService: GeolocateService) { }
 
-  ngOnInit() {
+  getPhysicalAddress(address: string, creator: string)  {
+    this.geolocateService.getCoordinates(address).subscribe(response => {
+      this.address = response.json();
+    });
   }
 
-  submitForm(creator: string, address: string, lat: string, lon: string) {
-    var newCache: Cache = new Cache(creator, address, lat, lon);
-    this.cacheService.addCache(newCache);
+  getLatLon(lat: string, lon: string, creator: string) {
+    this.geolocateService.getAddress(lat, lon).subscribe(response => {
+      this.address = response.json();
+    });
   }
+
+
+  // submitForm(creator: string, address: string, lat: string, lon: string) {
+  //   var newCache: Cache = new Cache(creator, address, lat, lon);
+  //   this.geolocateService.addCache(newCache);
+  // }
 
 }

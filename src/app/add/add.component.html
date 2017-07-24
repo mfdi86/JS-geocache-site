@@ -27,6 +27,9 @@
         <input #lon>
         <button (click)="getCoordinates(lat.value, lon.value, creator.value)">Submit</button>
       </form>
+      <div *ngIf="address">
+        <app-cache-list [childAddress]="address"></app-cache-list>
+      </div>
     </div>
   </div>
 </div>
