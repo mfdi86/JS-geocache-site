@@ -1,6 +1,6 @@
 <h2>Cache List</h2>
 
-<div *ngFor="let cache of caches" (click)="goToDetailPage(cache)" class="panel panel-default">
+<div *ngFor="let cache of caches | async" (click)="goToDetailPage(cache)" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{cache.creator}}</em>, {{cache.address}}</h3>
   </div>

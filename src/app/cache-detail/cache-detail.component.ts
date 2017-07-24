@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Cache } from '../cache.model';
 import { CacheService } from '../cache.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-cache-detail',
@@ -11,8 +12,8 @@ import { CacheService } from '../cache.service';
   providers: [CacheService]
 })
 export class CacheDetailComponent implements OnInit {
-  cacheId: number;
-  cacheToDisplay: Cache;
+  cacheId: string;
+  cacheToDisplay;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +23,7 @@ export class CacheDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.cacheId = parseInt(urlParameters['id']);
+      this.cacheId = urlParameters['id'];
     });
     this.cacheToDisplay = this.cacheService.getCacheById(this.cacheId);
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cache } from '../cache.model';
 import { Router } from '@angular/router';
 import { CacheService } from '../cache.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-cache-list',
@@ -10,7 +11,7 @@ import { CacheService } from '../cache.service';
   providers: [CacheService]
 })
 export class CacheListComponent implements OnInit {
-  caches: Cache[];
+  caches: FirebaseListObservable<any[]>;
   constructor(private router: Router, private cacheService: CacheService) {}
 
   ngOnInit(){
@@ -18,6 +19,6 @@ export class CacheListComponent implements OnInit {
   }
 
   goToDetailPage(clickedCache: Cache) {
-     this.router.navigate(['caches', clickedCache.id]);
+    //  this.router.navigate(['caches', clickedCache.id]);
    };
 }

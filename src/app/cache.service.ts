@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Cache } from './cache.model';
-import { CACHES } from './mock-caches';
+// import { CACHES } from './mock-caches';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class CacheService {
-
-  constructor() { }
+  caches: FirebaseListObservable<any[]>;
+  constructor(private database: AngularFireDatabase) {
+  this.caches = database.list('caches');
+}
 
   getCaches() {
-    return CACHES;
+    return this.caches;
   }
-  getCacheById (cacheId: number){
-    for (var i = 0; i <= CACHES.length - 1; i++) {
-      if (CACHES[i].id === cacheId) {
-        return CACHES[i];
-      }
-    }
+  getCacheById(cacheId: string){
+    return this.database.object('caches/' + cacheId);
   }
 }

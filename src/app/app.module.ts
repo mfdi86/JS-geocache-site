@@ -11,6 +11,7 @@ import { CacheDetailComponent } from './cache-detail/cache-detail.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AddComponent } from './add/add.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,7 +25,8 @@ export const firebaseConfig = {
     AppComponent,
     WelcomeComponent,
     CacheListComponent,
-    CacheDetailComponent
+    CacheDetailComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,

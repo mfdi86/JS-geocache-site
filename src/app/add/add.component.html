@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Cache to List</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Cache Creator:</label>
+        <br>
+        <input #newCreator>
+      </div>
+
+      <div>
+        <label>Address:</label>
+        <br>
+        <input #newAddress>
+      </div>
+
+      <div>
+        <label>GPS Coordinates:</label>
+        <br>
+        <input #newCoord>
+      </div>
+      <button (click)="submitForm(newCreator.value, newAddress.value, newCoord.value); newCreator.value=''; newAddress.value=''; newCoord.value=''">Add</button>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-{ "albums": [{
+{ "caches": [{
     "creator": "Maria",
     "address": "1099 E Street",
     "coord": "-254.543, -432.42",
@@ -7,11 +7,11 @@
     "creator": "Bob",
     "address": "1099 B Street",
     "coord": "-254.543, -432.42",
-    "id": "1"
+    "id": "2"
     }, {
     "creator": "Joe",
     "address": "1099 C Street",
     "coord": "-254.543, -432.42",
-    "id": "1"
+    "id": "3"
   }]
 }
