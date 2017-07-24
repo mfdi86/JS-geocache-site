@@ -18,7 +18,7 @@ export class CacheListComponent implements OnInit {
     this.caches = this.cacheService.getCaches();
   }
 
-  goToDetailPage(clickedCache: Cache) {
-    //  this.router.navigate(['caches', clickedCache.id]);
+  goToDetailPage(clickedCache) {
+    this.router.navigate(['caches', clickedCache.$key]);
    };
 }

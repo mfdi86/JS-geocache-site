@@ -18,7 +18,7 @@ export class AddComponent implements OnInit {
 
   submitForm(creator: string, address: string, lat: string, lon: string) {
     var newCache: Cache = new Cache(creator, address, lat, lon);
-    console.log(newCache);
+    this.cacheService.addCache(newCache);
   }
 
 }
