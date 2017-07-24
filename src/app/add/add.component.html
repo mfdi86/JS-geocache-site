@@ -1,31 +1,32 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Add New Cache to List</h3>
+    <h3 class="panel-title">Add a New Geoache</h3>
   </div>
   <div class="panel-body">
     <div>
       <div>
-        <label>Cache Creator:</label>
+        <label>Geocache Creator:</label>
         <br>
-        <input #newCreator>
+        <input #creator>
       </div>
 
-      <div>
-        <label>Address:</label>
+      <form>
+        <label>Geocache Address:</label>
         <br>
-        <input #newAddress>
-      </div>
-
-      <div>
-        <label>GPS Coordinates:</label>
+        <input #address>
+        <button (click)="getAddress(address.value, creator.value)">Submit</button>
+      </form>
+      <br><p>OR:</p><br>
+      <form>
+        <label>Cache GPS Coordinates:</label>
         <br>
         <label>Latitude:</label>
-        <input #newLat>
+        <input #lat>
         <br>
         <label>Longitude:</label>
-        <input #newLon>
-      </div>
-      <button (click)="submitForm(newCreator.value, newAddress.value, newLat.value, newLon.value); newCreator.value=''; newAddress.value=''; newLat.value=''; newLon.value='';">Add</button>
+        <input #lon>
+        <button (click)="getCoordinates(lat.value, lon.value, creator.value)">Submit</button>
+      </form>
     </div>
   </div>
 </div>
